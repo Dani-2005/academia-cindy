@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precios</title>
+    <link rel="stylesheet" href="css/precios.css">
+    <link rel="icon" href="/img/logo.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="container-inscripcion">
+        <h1 class="title">Precios</h1>
+        <p class="subtitle">TODAS LAS ACTIVIDADES</p>
+        <p class="subtitle">(POLE DANCE, POLE FITNESS, FLEXIBILIDAD)</p>
+
+        <div class="lista-precios">
+            <div class="precio-item">
+                <div class="info">
+                    <strong>Clases 1 vez a la semana</strong>
+                    <span>Mensualidad (4 clases, 1:30h c/u)</span>
+                </div>
+                <div class="monto">
+                    <span class="usd" data-usd="15">15$</span>
+                    <span class="bs precio-bs">Cargando...</span>
+                </div>
+            </div>
+
+            <div class="precio-item">
+                <div class="info">
+                    <strong>Clases 2 veces a la semana</strong>
+                    <span>Mensualidad (8 clases, 1:30h c/u)</span>
+                </div>
+                <div class="monto">
+                    <span class="usd" data-usd="25">25$</span>
+                    <span class="bs precio-bs">Cargando...</span>
+                </div>
+            </div>
+
+            <div class="precio-item">
+                <div class="info">
+                    <strong>Clases 3 veces a la semana</strong>
+                    <span>Mensualidad (12 clases, 1:30h c/u)</span>
+                </div>
+                <div class="monto">
+                    <span class="usd" data-usd="35">35$</span>
+                    <span class="bs precio-bs">Cargando...</span>
+                </div>
+            </div>
+
+            <div class="precio-item">
+                <div class="info">
+                    <strong>1 Clase de prueba</strong>
+                    <span>1:30h (Sujeto a horarios donde ya hay alumnas)</span>
+                </div>
+                <div class="monto">
+                    <span class="usd" data-usd="5">5$</span>
+                    <span class="bs precio-bs">Cargando...</span>
+                </div>
+            </div>
+
+            <div class="precio-item">
+                <div class="info">
+                    <strong>1 Clase privada y personalizada</strong>
+                    <span>Atención personal (2 horas de clase)</span>
+                </div>
+                <div class="monto">
+                    <span class="usd" data-usd="10">10$</span>
+                    <span class="bs precio-bs">Cargando...</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="nota-inscripcion">
+            📌 La inscripción es por tan solo: 
+            <b class="usd" data-usd="1">1$</b> / <b class="precio-bs">...</b>
+        </p>
+        
+        <p id="fecha-tasa" class="tasa-info"></p>
+    </div>
+</body>
+
+<script>
+    // 1. LA NUEVA FUNCIÓN (La que habla con Netlify)
+    async function cargarTasaBCV() {
+        const elementosUSD = document.querySelectorAll('.usd');
+        const elementosBS = document.querySelectorAll('.precio-bs');
+        const infoTasa = document.getElementById('fecha-tasa');
+
+        try {
+            // Netlify buscará automáticamente el archivo obtener_tasa.py
+            const response = await fetch('/.netlify/functions/tasa');
+            const data = await response.json();
+            
+            const tasa = data.tasa;
+            const etiqueta = data.status === "success" ? "Actualizada" : "Referencial";
+
+            // Llamamos a la función de abajo para mostrar los datos
+            actualizarInterfaz(tasa, etiqueta, elementosUSD, elementosBS, infoTasa);
+
+        } catch (error) {
+            console.error("Error llamando a la función:", error);
+            // Tasa de emergencia por si el internet falla
+            actualizarInterfaz(65.00, "Sin conexión", elementosUSD, elementosBS, infoTasa);
+        }
+    }
+
+    // 2. LA FUNCIÓN AUXILIAR (¡No la borres! Es la que hace los cálculos)
+    function actualizarInterfaz(tasa, etiqueta, elementosUSD, elementosBS, infoTasa) {
+        elementosUSD.forEach((el, index) => {
+            const usd = parseFloat(el.getAttribute('data-usd'));
+            const totalBs = (usd * tasa).toLocaleString('es-VE', { 
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2 
+            });
+            if (elementosBS[index]) {
+                elementosBS[index].innerText = `${totalBs} Bs.`;
+            }
+        });
+        if (infoTasa) infoTasa.innerText = `Tasa aplicada: ${tasa} Bs. — ${etiqueta}`;
+    }
+
+    // 3. ARRANCAR AL CARGAR LA PÁGINA
+    window.onload = cargarTasaBCV;
+</script>
+</html>

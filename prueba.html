@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academia de Pole</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #ed2786 0%, #b47fd1 100%);
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 24px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 110px;
+      height: 110px;
+      background: #fff;
+      border-radius: 50%;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .logo img {
+      width: 90px;
+      height: 90px;
+    }
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      font-size: 1rem;
+      margin-bottom: 26px;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .btn-link {
+      width: 100%;
+      background: #fff;
+      color: #ed2786;
+      border: none;
+      border-radius: 30px;
+      margin: 10px 0;
+      padding: 18px 0;
+      font-size: 1.05rem;
+      font-weight: bold;
+      text-align: left;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      display: flex;
+      align-items: center;
+      transition: background 0.2s, color 0.2s;
+      position: relative;
+    }
+    .btn-link:hover {
+      background: #ffe1f0;
+      color: #b9005b;
+    }
+    .btn-link img, .btn-link .fa {
+      width: 28px;
+      height: 28px;
+      margin: 0 14px 0 16px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .btn-link .fa {
+      background: none;
+      margin-right: 16px;
+      margin-left: 16px;
+    }
+    .btn-link span {
+      flex: 1;
+      text-align: center;
+    }
+    .section {
+      width: 100%;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 8px;
+      margin-left: 8px;
+      font-size: 1.1rem;
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      margin-top: 32px;
+      gap: 24px;
+    }
+    .socials a {
+      color: #fff;
+      font-size: 1.7rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .socials a:hover {
+      color: #ffe1f0;
+    }
+  </style>
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo Academia">
+    </div>
+    <div class="title">@FLAGPOLESTUDIO</div>
+    <div class="subtitle">
+      MÁS DE 9 AÑOS DE EXPERIENCIA 💪<br>
+      ✨ CLASES PARA TODOS LOS NIVELES
+    </div>
+    <!-- Botones principales -->
+    <a href="#" class="btn-link"><span>INSTRUCTIVO RESERVA DE CLASE</span></a>
+    <a href="#" class="btn-link"><img src="whatsapp.png" alt="WhatsApp"><span>COMPRAR CRÉDITOS</span></a>
+    <a href="#" class="btn-link"><span>DESCARGAR APP</span></a>
+    <a href="#" class="btn-link"><span>PRIMERA CLASE</span></a>
+    <a href="#" class="btn-link"><img src="agronomia.jpg" alt="Agronomía"><span>AGRONOMÍA</span></a>
+    <a href="#" class="btn-link"><span>INSTRUCTORADO BÁSICO</span></a>
+    <!-- Sección de info rápida -->
+    <div class="section">
+      <div class="section-title">Información</div>
+      <a href="#" class="btn-link"><i class="fa fa-question-circle"></i><span>¿Cómo inscribirse?</span></a>
+      <a href="#" class="btn-link"><i class="fa fa-clock-o"></i><span>Horarios</span></a>
+      <a href="#" class="btn-link"><i class="fa fa-file-text-o"></i><span>Reglamento</span></a>
+      <a href="#" class="btn-link"><i class="fa fa-usd"></i><span>Precios</span></a>
+      <a href="#" class="btn-link"><i class="fa fa-comments-o"></i><span>Preguntas frecuentes</span></a>
+      <a href="#" class="btn-link"><i class="fa fa-envelope-o"></i><span>Contáctanos</span></a>
+      <a href="https://www.google.com/maps?q=tu+direccion" class="btn-link" target="_blank"><i class="fa fa-map-marker"></i><span>Ubicación</span></a>
+    </div>
+    <!-- Redes sociales -->
+    <div class="socials">
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-envelope"></i></a>
+      <a href="#"><i class="fa fa-whatsapp"></i></a>
+    </div>
+  </div>
+</body>
+</html>
+

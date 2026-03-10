@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../img/Imagen\ de\ WhatsApp\ 2025-04-26\ a\ las\ 22.51.35_b09a398c.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container-inscripcion {
+    width: 95%;
+    max-width: 420px;
+    margin: 40px auto 40px auto;
+    padding: 32px 20px 24px 20px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 16px 0 10px 0;
+    color: #d820b6;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    border: 2px solid #d820b6;
+    padding: 10px 0;
+    border-radius: 10px;
+    background: #fff7fc;
+    width: 100%;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    text-decoration: underline;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    color: #d820b6;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+}
+
+.important-notes {
+    padding-left: 18px;
+}
+
+.important-notes li {
+    font-size: 1rem;
+    margin-top: 12px;
+    text-align: left;
+    list-style-type: disc;
+}
+
+.important-notes li::marker {
+    color: #d820b6;
+    font-weight: bold;
+}
+
+.mini-nota {
+    font-size: 0.95rem;
+    margin-top: 18px;
+    text-align: center;
+    font-weight: bold;
+    border: #d820b6 2px solid;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background: #fff7fc;
+    color: #d820b6;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .container-inscripcion {
+        max-width: 95vw;
+        padding: 24px 10px 16px 10px;
+        margin-top: 24px;
+    }
+    h1 {
+        font-size: 1.6rem;
+        padding: 8px 0;
+    }
+    .subtitle, .steps li, .important-notes li {
+        font-size: 0.97rem;
+    }
+    .nota {
+        padding: 10px 8px 4px 8px;
+    }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+    body {
+        align-items: center;
+    }
+    .container-inscripcion {
+        max-width: 100vw;
+        width: 100vw;
+        border-radius: 0;
+        padding: 18px 4vw 10px 4vw;
+        margin-top: 0;
+    }
+    h1 {
+        font-size: 1.15rem;
+        padding: 6px 0;
+    }
+    .subtitle, .steps li, .important-notes li {
+        font-size: 0.93rem;
+    }
+    .nota {
+        padding: 8px 4px 4px 4px;
+    }
+    .mini-nota {
+        font-size: 0.87rem;
+        padding: 4px 4px;
+    }
+}
