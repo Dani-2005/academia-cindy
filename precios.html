@@ -88,7 +88,7 @@
 
         try {
             // Netlify buscará automáticamente el archivo obtener_tasa.py
-            const response = await fetch('/.netlify/functions/tasa');
+            const response = await fetch('/.netlify/functions/obtener_tasa');
             const data = await response.json();
             
             const tasa = data.tasa;
